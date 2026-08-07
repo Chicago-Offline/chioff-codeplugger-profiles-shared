@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Chicago-Offline/codeplugger/5d2326610d8cae333d85a2e8f637cb755975aedd/schemas/profile-0.1.schema.json
+
+$schema: "https://raw.githubusercontent.com/Chicago-Offline/codeplugger/5d2326610d8cae333d85a2e8f637cb755975aedd/schemas/profile-0.1.schema.json"
+version: "0.1"
+id: "chioff_p4_shared"
+name: "Chicago Offline Shared - Retevis MateTalk P4"
+radio: "retevis_matetalk_p4"
+# Shared ChiOff community net for the Retevis MateTalk P4.
+#
+# The P4 is UHF-only (400-470 MHz), so it can carry the GMRS zone but NOT
+# the MURS channels (151/154 MHz is out of band). MURS lives in the
+# VHF-capable profiles only -- see the DM-32 profile.
+#
+# No radio_instance: this is a community profile, not tied to one operator's
+# handset.
+zones:
+  # 6 channels: 4 simplex + road + the repeater pair.
+  - id: "chioff_gmrs"
+    name: "ChiOff"
+    assignments:
+      - "asg_chio_all"
+      - "asg_chio_team1"
+      - "asg_chio_team2"
+      - "asg_chio_team3"
+      - "asg_chio_road"
+      - "asg_chio_repeater"

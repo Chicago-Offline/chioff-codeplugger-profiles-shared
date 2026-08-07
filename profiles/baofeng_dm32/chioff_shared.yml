@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Chicago-Offline/codeplugger/5d2326610d8cae333d85a2e8f637cb755975aedd/schemas/profile-0.1.schema.json
+
+$schema: "https://raw.githubusercontent.com/Chicago-Offline/codeplugger/5d2326610d8cae333d85a2e8f637cb755975aedd/schemas/profile-0.1.schema.json"
+version: "0.1"
+id: "chioff_dm32_shared"
+name: "Chicago Offline Shared - Baofeng DM-32"
+radio: "baofeng_dm32"
+# Shared ChiOff community net for the Baofeng DM-32.
+#
+# The DM-32 is dual-band (VHF + UHF), so unlike the UHF-only MateTalk P4 it
+# carries the MURS channels as well as the GMRS set.
+#
+# No radio_instance: this is a community profile, not tied to one operator's
+# handset.
+zones:
+  # 6 channels: 4 simplex + road + the repeater pair.
+  - id: "chioff_gmrs"
+    name: "ChiOff GMRS"
+    assignments:
+      - "asg_chio_all"
+      - "asg_chio_team1"
+      - "asg_chio_team2"
+      - "asg_chio_team3"
+      - "asg_chio_road"
+      - "asg_chio_repeater"
+  # 10 channels: the DCS 152 group set, then the untoned open set.
+  # Both live in one zone so the toned/untoned pairing is visible while
+  # scrolling. The untoned channels keep their plain "MURS n" names --
+  # they are the open Part 95J channels and must stay tone-free.
+  - id: "chioff_murs"
+    name: "ChiOff MURS"
+    assignments:
+      - "asg_chio_murs1"
+      - "asg_chio_murs2"
+      - "asg_chio_murs3"
+      - "asg_chio_murs4"
+      - "asg_chio_murs5"
+      - "asg_chio_murs1_open"
+      - "asg_chio_murs2_open"
+      - "asg_chio_murs3_open"
+      - "asg_chio_murs4_open"
+      - "asg_chio_murs5_open"
