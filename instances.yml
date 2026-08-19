@@ -24,7 +24,9 @@ instances:
   p4_01:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-01"
+    label: "CO-P4-682001"
+    radio_ids:
+      682001: "P4 BLUE"
     case_color: black
     tape_color: blue
     case_serial: "250716RP041101728"
@@ -33,7 +35,9 @@ instances:
   p4_02:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-02"
+    label: "CO-P4-682002"
+    radio_ids:
+      682001: "P4 YELLOW"
     case_color: black
     tape_color: yellow
     case_serial: "250716RP041101677"
@@ -42,7 +46,9 @@ instances:
   p4_03:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-03"
+    label: "CO-P4-682003"
+    radio_ids:
+      682001: "P4 PURPLE"
     case_color: black
     tape_color: purple
     case_serial: "250716RP041101784"
@@ -51,7 +57,9 @@ instances:
   p4_04:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-04"
+    label: "CO-P4-682004"
+    radio_ids:
+      682004: "P4 RED"
     case_color: black
     tape_color: red
     case_serial: "250716RP041101670"
