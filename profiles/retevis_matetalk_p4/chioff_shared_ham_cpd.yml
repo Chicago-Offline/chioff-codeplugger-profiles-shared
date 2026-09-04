@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Chicago-Offline/codeplugger/5d2326610d8cae333d85a2e8f637cb755975aedd/schemas/profile-0.1.schema.json
+
+$schema: "https://raw.githubusercontent.com/Chicago-Offline/codeplugger/5d2326610d8cae333d85a2e8f637cb755975aedd/schemas/profile-0.1.schema.json"
+version: "0.1"
+id: "chioff_p4_shared_ham_cpd"
+name: "Chicago Offline Shared + Ham + Chicago Police - Retevis MateTalk P4"
+radio: "retevis_matetalk_p4"
+# Shared ChiOff, UHF amateur simplex, and Chicago Police RX-only monitoring
+# configuration for the UHF-only (400-470 MHz) Retevis MateTalk P4.
+#
+# No radio_instance: this is a community profile, not tied to one operator's
+# handset.
+zones:
+  # 11 channels: 6 analog GMRS + 5 DMR family channels.
+  - id: "chioff_gmrs"
+    name: "ChiOff"
+    assignments:
+      - "asg_chio_all"
+      - "asg_chio_team1"
+      - "asg_chio_team2"
+      - "asg_chio_team3"
+      - "asg_chio_road"
+      - "asg_chio_repeater"
+      - "asg_chio_dmr_all"
+      - "asg_chio_dmr_team1"
+      - "asg_chio_dmr_team2"
+      - "asg_chio_dmr_team3"
+      - "asg_chio_dmr_road"
+  # 10 channels: 5 analog UHF amateur simplex, then their DMR equivalents.
+  - id: "chioff_ham"
+    name: "ChiOff Ham"
+    assignments:
+      - "us_ham_uhf_call"
+      - "us_ham_uhf_446025"
+      - "us_ham_uhf_446050"
+      - "us_ham_uhf_446075"
+      - "us_ham_uhf_446100"
+      - "asg_chio_dmr_uhf_call"
+      - "asg_chio_dmr_uhf_446025"
+      - "asg_chio_dmr_uhf_446050"
+      - "asg_chio_dmr_uhf_446075"
+      - "asg_chio_dmr_uhf_446100"
+  # 7 upstream analog CPD Citywide channels, RX-only by definition.
+  # The upstream VHF car-to-car channel is outside the P4's receive range.
+  - id: "chicago_police"
+    name: "Chicago Police"
+    assignments:
+      - "asg_cpd_cw1"
+      - "asg_cpd_cw2"
+      - "asg_cpd_cw3"
+      - "asg_cpd_cw4"
+      - "asg_cpd_cw5"
+      - "asg_cpd_cw6"
+      - "asg_cpd_cw7"
