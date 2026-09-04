@@ -1,0 +1,5 @@
+# Transient device I/O captures, raw codeplug dumps, and operation logs.
+/.artifacts/
+
+# Finder metadata.
+.DS_Store

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "radio": "retevis_matetalk_p4",
+  "radio_instance": "co_p4_682041",
+  "dmr_id": 682041,
+  "captured_at": "2026-09-04T04:12:29.531210+00:00",
+  "operation": "write-correction",
+  "verification": "r08 rewritten; analog HAM channels 12-16 verified TX-enabled",
+  "legacy_artifact_instance": "p4_01",
+  "source_artifact": ".artifacts/retevis_matetalk_p4/p4_01/correction-20260903-231215",
+  "current_toml_sha256": "3966c7c52b4989cdea0d7a95f6f0db6a6c661cf4e8493601e6d5c1ad1798d408",
+  "codeplug_raw_sha256": "6d9e0efa25b3d155b9580159dc937b1defd11d86481bffe11aa622328c25307f"
+}
