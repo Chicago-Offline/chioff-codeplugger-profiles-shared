@@ -6,6 +6,8 @@
   "captured_at": "2026-09-04T04:12:29.531210+00:00",
   "operation": "write-correction",
   "verification": "r08 rewritten; analog HAM channels 12-16 verified TX-enabled",
+  "reference_profile": "chioff_p4_shared_ham",
+  "reference_generator_commit": "65032e5",
   "legacy_artifact_instance": "p4_01",
   "source_artifact": ".artifacts/retevis_matetalk_p4/p4_01/correction-20260903-231215",
   "current_toml_sha256": "3966c7c52b4989cdea0d7a95f6f0db6a6c661cf4e8493601e6d5c1ad1798d408",
