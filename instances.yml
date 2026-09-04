@@ -21,12 +21,12 @@ $schema: "https://raw.githubusercontent.com/Chicago-Offline/codeplugger/main/sch
 version: "0.1"
 
 instances:
-  p4_01:
+  co_p4_682041:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-682041"
+    label: "co-p4-682041"
     dmr_id: 682041
-    dmr_contact_name: "682041"
+    dmr_contact_name: "COP4BLUE"
     radio_ids:
       682041: "P4 BLUE"
     case_color: black
@@ -34,12 +34,12 @@ instances:
     case_serial: "250716RP041101728"
     fcc_id: "2ASNSMTP4"
 
-  p4_02:
+  co_p4_682042:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-682042"
+    label: "co-p4-682042"
     dmr_id: 682042
-    dmr_contact_name: "682042"
+    dmr_contact_name: "COP4YELLOW"
     radio_ids:
       682042: "P4 YELLOW"
     case_color: black
@@ -47,12 +47,12 @@ instances:
     case_serial: "250716RP041101677"
     fcc_id: "2ASNSMTP4"
 
-  p4_03:
+  co_p4_682043:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-682043"
+    label: "co-p4-682043"
     dmr_id: 682043
-    dmr_contact_name: "682043"
+    dmr_contact_name: "COP4PURPLE"
     radio_ids:
       682043: "P4 PURPLE"
     case_color: black
@@ -60,12 +60,12 @@ instances:
     case_serial: "250716RP041101784"
     fcc_id: "2ASNSMTP4"
 
-  p4_04:
+  co_p4_682044:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-682044"
+    label: "co-p4-682044"
     dmr_id: 682044
-    dmr_contact_name: "682044"
+    dmr_contact_name: "COP4RED"
     radio_ids:
       682044: "P4 RED"
     case_color: black
