@@ -14,7 +14,7 @@ radio: "retevis_matetalk_p4"
 # No radio_instance: this is a community profile, not tied to one operator's
 # handset.
 zones:
-  # 6 channels: 4 simplex + road + the repeater pair.
+  # 11 channels: 6 analog GMRS + 5 DMR family channels.
   - id: "chioff_gmrs"
     name: "ChiOff"
     assignments:
@@ -24,3 +24,8 @@ zones:
       - "asg_chio_team3"
       - "asg_chio_road"
       - "asg_chio_repeater"
+      - "asg_chio_dmr_all"
+      - "asg_chio_dmr_team1"
+      - "asg_chio_dmr_team2"
+      - "asg_chio_dmr_team3"
+      - "asg_chio_dmr_road"

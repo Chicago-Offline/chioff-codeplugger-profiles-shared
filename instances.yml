@@ -24,9 +24,11 @@ instances:
   p4_01:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-682001"
+    label: "CO-P4-682041"
+    dmr_id: 682041
+    dmr_contact_name: "682041"
     radio_ids:
-      682001: "P4 BLUE"
+      682041: "P4 BLUE"
     case_color: black
     tape_color: blue
     case_serial: "250716RP041101728"
@@ -35,9 +37,11 @@ instances:
   p4_02:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-682002"
+    label: "CO-P4-682042"
+    dmr_id: 682042
+    dmr_contact_name: "682042"
     radio_ids:
-      682002: "P4 YELLOW"
+      682042: "P4 YELLOW"
     case_color: black
     tape_color: yellow
     case_serial: "250716RP041101677"
@@ -46,9 +50,11 @@ instances:
   p4_03:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-682003"
+    label: "CO-P4-682043"
+    dmr_id: 682043
+    dmr_contact_name: "682043"
     radio_ids:
-      682003: "P4 PURPLE"
+      682043: "P4 PURPLE"
     case_color: black
     tape_color: purple
     case_serial: "250716RP041101784"
@@ -57,9 +63,11 @@ instances:
   p4_04:
     radio: retevis_matetalk_p4
     profile: chioff_p4_shared
-    label: "CO-P4-682004"
+    label: "CO-P4-682044"
+    dmr_id: 682044
+    dmr_contact_name: "682044"
     radio_ids:
-      682004: "P4 RED"
+      682044: "P4 RED"
     case_color: black
     tape_color: red
     case_serial: "250716RP041101670"
