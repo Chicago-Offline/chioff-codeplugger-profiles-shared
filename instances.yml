@@ -72,3 +72,17 @@ instances:
     tape_color: red
     case_serial: "250716RP041101670"
     fcc_id: "2ASNSMTP4"
+
+  co_dm32_eric:
+    radio: baofeng_dm32
+    profile: chioff_dm32_shared
+    label: "co-dm32-eric"
+    dmr_id: 3207125
+    dmr_contact_name: "KC9MHE"
+    radio_ids:
+      3207125: "KC9MHE"
+    case_color: green
+    tape_color: green
+    case_serial: null
+    fcc_id: "2AJGM-NA32UV"
+    assigned_to: eric
