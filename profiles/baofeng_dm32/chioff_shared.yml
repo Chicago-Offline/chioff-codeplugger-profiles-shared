@@ -23,18 +23,23 @@ zones:
       - "asg_chio_team3"
       - "asg_chio_road"
       - "asg_chio_repeater"
-  # 10 channels: the DCS 152 group set, then the untoned open set.
-  # Both live in one zone so the toned/untoned pairing is visible while
-  # scrolling. The untoned channels keep their plain "MURS n" names --
-  # they are the open Part 95J channels and must stay tone-free.
+  # 10 channels: the DCS 023 group set (displayed as "Fam VHF 1-5"), then
+  # the untoned open set. Both live in one zone so the toned/untoned pairing
+  # is visible while scrolling. The untoned channels keep their plain
+  # "MURS n" names -- they are the open Part 95J channels and must stay
+  # tone-free.
+  #
+  # 2026-09-10: Fam VHF list order is reversed vs. the MURS channel number
+  # (Fam VHF 1 = MURS 5, ... Fam VHF 5 = MURS 1) so the two wideband 154 MHz
+  # channels come first.
   - id: "chioff_murs"
     name: "ChiOff MURS"
     assignments:
-      - "asg_chio_murs1"
-      - "asg_chio_murs2"
-      - "asg_chio_murs3"
-      - "asg_chio_murs4"
       - "asg_chio_murs5"
+      - "asg_chio_murs4"
+      - "asg_chio_murs3"
+      - "asg_chio_murs2"
+      - "asg_chio_murs1"
       - "asg_chio_murs1_open"
       - "asg_chio_murs2_open"
       - "asg_chio_murs3_open"
