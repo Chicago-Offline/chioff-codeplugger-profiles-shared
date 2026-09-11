@@ -37,5 +37,6 @@ zones:
       - "asgn_murs_1"
       - "asgn_murs_2"
       - "asgn_murs_3"
-      - "asgn_murs_4"
-      - "asgn_murs_5"
+      # Upstream names exceed the DM-32's 16-char channel-name limit.
+      - {id: "asgn_murs_4", display_name: "MURS 4 Blue Dot"}
+      - {id: "asgn_murs_5", display_name: "MURS 5 Grn Dot"}
