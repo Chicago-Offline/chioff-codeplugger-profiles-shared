@@ -1,5 +1,8 @@
 # Transient device I/O captures, raw codeplug dumps, and operation logs.
 /.artifacts/
 
+# Local GitHub Pages build output (python3 site/build.py).
+/_site/
+
 # Finder metadata.
 .DS_Store
