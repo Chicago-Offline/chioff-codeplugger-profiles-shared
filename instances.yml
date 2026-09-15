@@ -99,3 +99,8 @@ instances:
     radio: baofeng_bf888s
     label: "co-888s-01"
     profile: chioff_bf888s_shared
+
+  co_888s_02:
+    radio: baofeng_bf888s
+    label: "co-888s-02"
+    profile: chioff_bf888s_shared
