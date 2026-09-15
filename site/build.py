@@ -30,6 +30,7 @@ RADIO_NAMES = {
     "baofeng_dm32": ("Baofeng DM-32", "Dual-band DMR/FM handheld with airband receive"),
     "baofeng_uv5r_mini": ("Baofeng UV-5R Mini", "Dual-band analog FM, programmed through CHIRP"),
     "ailunce_ha2": ("Ailunce HA2", "Dual-band analog FM, programmed through CHIRP"),
+    "baofeng_bf888s": ("Baofeng BF-888S", "UHF-only analog FM, 16 fixed channels, programmed through CHIRP"),
 }
 
 TAPE_COLORS = {

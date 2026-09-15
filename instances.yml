@@ -86,3 +86,13 @@ instances:
     case_serial: null
     fcc_id: "2AJGM-NA32UV"
     assigned_to: eric
+
+  # Analog-only UHF FM, 16 channels, no DMR — hence no dmr_id / radio_ids.
+  # `profile` intentionally absent: codeplugger radio support for
+  # baofeng_bf888s is in progress and no shared profile exists yet.
+  # `codeplugger-fleet` will report this instance as an error until one lands.
+  # fcc_id omitted on purpose: BF-888S ships under both 2AJGM-BF888S and
+  # 2AJGMBF-888S depending on batch — read it off this radio's label.
+  co_888s_01:
+    radio: baofeng_bf888s
+    label: "co-888s-01"
