@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Chicago-Offline/codeplugger/5d2326610d8cae333d85a2e8f637cb755975aedd/schemas/profile-0.1.schema.json
+
+$schema: "https://raw.githubusercontent.com/Chicago-Offline/codeplugger/5d2326610d8cae333d85a2e8f637cb755975aedd/schemas/profile-0.1.schema.json"
+version: "0.1"
+id: "chioff_bf888s_shared"
+name: "Chicago Offline Shared - Baofeng BF-888S"
+radio: "baofeng_bf888s"
+# Shared ChiOff community net for the Baofeng BF-888S.
+#
+# The BF-888S is UHF-only (400-490 MHz), so like the MateTalk P4 it carries
+# the GMRS zone but NOT the MURS channels (151/154 MHz is out of band).
+#
+# Two things about this radio that no other profile in this repo has to deal
+# with, both from the CHIRP driver (chirp/drivers/h777.py, class H777Radio):
+#
+#   1. rf.has_name = False -- the radio has NO channel names and no display.
+#      Channel identity is the knob position plus whatever is printed on the
+#      tape. The assignment order below IS the user interface, so it is
+#      load-bearing in a way it is not on the DM-32 or the P4. Do not reorder
+#      without reprinting the label on every radio in the fleet.
+#
+#   2. rf.has_bank = False -- the radio has no zone concept. The single zone
+#      below exists because profile-0.1 requires at least one; it flattens to
+#      knob positions 1-6. See the max_zones note in the BF-888S
+#      capabilities.json.
+#
+# Positions 7-16 are intentionally left empty (Eric, 2026-09-14) so the unused
+# detents are dead air and cannot be mis-keyed onto something live.
+#
+# No radio_instance: this is a community profile, not tied to one operator's
+# handset.
+zones:
+  # 6 channels -> knob positions 1-6: analog GMRS simplex + road + repeater.
+  - id: "chioff_gmrs"
+    name: "ChiOff"
+    assignments:
+      - "asg_chio_all"
+      - "asg_chio_team1"
+      - "asg_chio_team2"
+      - "asg_chio_team3"
+      - "asg_chio_road"
+      - "asg_chio_repeater"
