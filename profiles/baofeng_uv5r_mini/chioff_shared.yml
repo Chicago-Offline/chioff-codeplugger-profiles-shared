@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Chicago-Offline/codeplugger/5d2326610d8cae333d85a2e8f637cb755975aedd/schemas/profile-0.1.schema.json
+
+$schema: "https://raw.githubusercontent.com/Chicago-Offline/codeplugger/5d2326610d8cae333d85a2e8f637cb755975aedd/schemas/profile-0.1.schema.json"
+version: "0.1"
+id: "chioff_uv5rmini_shared"
+name: "Chicago Offline Shared - Baofeng UV-5R Mini"
+radio: "baofeng_uv5r_mini"
+# Shared ChiOff community net for the Baofeng UV-5R Mini.
+#
+# The UV-5R Mini is dual-band (136-174 and 400-480 MHz TX), so like the DM-32
+# and unlike the UHF-only BF-888S and MateTalk P4 it carries the MURS channels
+# alongside the GMRS set. Same 16 channels as the DM-32 profile, in the same
+# order, so a member carrying both radios reads the same list on each.
+#
+# Two differences from the DM-32 profile, both from this radio's
+# capabilities.json:
+#
+#   1. One zone, not two. max_zones is 1 -- the UV-5R Mini has no user-facing
+#      zone concept, and the single zone here exists only because profile-0.1
+#      requires at least one. The GMRS and MURS blocks are contiguous in the
+#      channel list instead of being separated by a zone boundary.
+#
+#   2. Channel names are capped at 12 characters, not 16, so three names the
+#      DM-32 carries in full are shortened below. The overrides are display
+#      policy and belong here; the names themselves stay unchanged in SSRF.
+#
+# No radio_instance: this is a community profile, not tied to one operator's
+# handset.
+zones:
+  # 16 channels: the 6-channel GMRS block, then the ChiOff DCS 023 MURS set,
+  # then upstream's open MURS set. Order matches the DM-32 profile.
+  - id: "chioff"
+    name: "ChiOff"
+    assignments:
+      # GMRS: 4 simplex + road + the repeater pair.
+      - "asg_chio_all"
+      - "asg_chio_team1"
+      - "asg_chio_team2"
+      - "asg_chio_team3"
+      - "asg_chio_road"
+      # "ChiO REPEATER" is 13 characters.
+      - {id: "asg_chio_repeater", display_name: "ChiO RPT"}
+      # MURS: the ChiOff toned set, then the open set, so the toned/untoned
+      # pairing stays visible while scrolling. The ChiOff block is listed in
+      # ChiO VHF display order, which the overlay numbers in reverse
+      # frequency order "for wideband priority" -- so the two wideband
+      # channels are ChiO VHF 1 and 2 and come first. It also puts ChiO VHF 5
+      # next to MURS 1: same frequency, toned then untoned.
+      - "asg_chio_murs5"  # ChiO VHF 1, 154.600 wideband
+      - "asg_chio_murs4"  # ChiO VHF 2, 154.570 wideband
+      - "asg_chio_murs3"  # ChiO VHF 3, 151.940 narrowband
+      - "asg_chio_murs2"  # ChiO VHF 4, 151.880 narrowband
+      - "asg_chio_murs1"  # ChiO VHF 5, 151.820 narrowband
+      - "asgn_murs_1"
+      - "asgn_murs_2"
+      - "asgn_murs_3"
+      # Upstream names exceed this radio's 12-char channel-name limit. The
+      # DM-32 profile shortens these too, but to 16 characters, so the two
+      # radios do not show identical strings for these two channels.
+      - {id: "asgn_murs_4", display_name: "MURS 4 Blue"}
+      - {id: "asgn_murs_5", display_name: "MURS 5 Grn"}
