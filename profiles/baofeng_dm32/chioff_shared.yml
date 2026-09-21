@@ -29,11 +29,17 @@ zones:
   - id: "chioff_murs"
     name: "ChiOff MURS"
     assignments:
-      - "asg_chio_murs1"
-      - "asg_chio_murs2"
-      - "asg_chio_murs3"
-      - "asg_chio_murs4"
-      - "asg_chio_murs5"
+      # Listed in ChiO VHF display order, which the overlay numbers in reverse
+      # frequency order "for wideband priority" -- so the two wideband
+      # channels are ChiO VHF 1 and 2 and come first here. Ordering by
+      # assignment ID instead would bury them at the bottom of the block.
+      # It also puts ChiO VHF 5 next to MURS 1: same frequency, toned then
+      # untoned.
+      - "asg_chio_murs5"  # ChiO VHF 1, 154.600 wideband
+      - "asg_chio_murs4"  # ChiO VHF 2, 154.570 wideband
+      - "asg_chio_murs3"  # ChiO VHF 3, 151.940 narrowband
+      - "asg_chio_murs2"  # ChiO VHF 4, 151.880 narrowband
+      - "asg_chio_murs1"  # ChiO VHF 5, 151.820 narrowband
       - "asgn_murs_1"
       - "asgn_murs_2"
       - "asgn_murs_3"
