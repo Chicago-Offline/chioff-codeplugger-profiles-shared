@@ -22,7 +22,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 REPO_URL = "https://github.com/Chicago-Offline/chioff-codeplugger-profiles-shared"
-PAGE_URL = "https://chicago-offline.github.io/chioff-codeplugger-profiles-shared/"
+PAGE_URL = "https://profiles.chicagooffline.com/"
 CODEPLUGGER_URL = "https://chicago-offline.github.io/codeplugger/"
 
 RADIO_NAMES = {
