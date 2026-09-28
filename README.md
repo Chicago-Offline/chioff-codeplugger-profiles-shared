@@ -1,6 +1,6 @@
 # chioff-codeplugger-profiles-shared
 
-**🌐 [Project site](https://chicago-offline.github.io/chioff-codeplugger-profiles-shared/)**
+**🌐 [Project site](https://profiles.chicagooffline.com/)**
 
 Shared [codeplugger](https://codeplugger.chicagooffline.com/) profiles for the
 Chicago Offline community nets, plus the registered shared fleet
