@@ -28,6 +28,11 @@ radio: "baofeng_dm32"
 #
 # No radio_instance: this is a community profile, not tied to one operator's
 # handset.
+#
+# Every DMR channel is receive-only (tx_permitted: false). A community
+# profile has no DMR ID to transmit with, so the export carries the UNUSED
+# placeholder identity; to key up on the ham DMR channels, build from a
+# personal profile that binds a radio_instance with a dmr_id.
 zones:
   # The shared community net, copied from chioff_shared.yml -- keep in sync.
   - id: "chioff_gmrs"
@@ -54,14 +59,20 @@ zones:
       - {id: "asgn_murs_4", display_name: "MURS 4 Blue Dot"}
       - {id: "asgn_murs_5", display_name: "MURS 5 Grn Dot"}
   # Open GMRS repeaters around Cook County. TX needs a GMRS licence.
+  # Ids follow the RadioReference reconcile in ssrf-lite: the former
+  # "Chicago 575" (141.3 PL) is now ohare_575, "Oak Lawn 625" is
+  # oak_forest_625, and chicago_550 / downtown_575 were added by the same
+  # pass.
   - id: "gmrs_repeaters"
     name: "GMRS Repeaters"
     assignments:
       - "asgn_gmrs_lincolnwood_575"
+      - "asgn_gmrs_chicago_550"
       - "asgn_gmrs_chicago_600"
-      - "asgn_gmrs_chicago_575"
+      - "asgn_gmrs_ohare_575"
+      - "asgn_gmrs_downtown_575"
       - "asgn_gmrs_forest_view_650"
-      - "asgn_gmrs_oak_lawn_625"
+      - "asgn_gmrs_oak_forest_625"
       - "asgn_gmrs_montclare_650"
       - "asgn_nsea_675"
       - "asgn_nsea_650"
@@ -87,33 +98,34 @@ zones:
       - "asgn_na9pl_440_500_fm"
       - "asgn_w9dup_2m_fm"
       - "asgn_w9dup_440_fm"
-  # Chicagoland DMR system plus the Tri-State network.
+  # Chicagoland DMR system plus the Tri-State network. Receive-only here;
+  # see the header note.
   - id: "chicago_dmr"
     name: "Chicago DMR"
     assignments:
-      - "asgn_cl_loop"
-      - "asgn_cl_schaumburg"
-      - "asgn_k9bar_bolingbrook"
-      - "asgn_n9pay_carlsville"
-      - "asgn_aa9vi_chicago"
-      - "asgn_k9vi_crystal_lake"
-      - "asgn_n9iaa_crown_point"
-      - "asgn_k9nro_elburn"
-      - "asgn_n9pay_green_bay"
-      - "asgn_k9ord_inverness"
-      - "asgn_n9iaa_la_porte"
-      - "asgn_n9pay_milwaukee"
-      - "asgn_kc9kko_morris"
-      - "asgn_n9pay_new_berlin"
-      - "asgn_ww9p_rockford"
-      - "asgn_k9mot_schaumburg"
-      - "asgn_n8ouz_traverse_city"
-      - "asgn_n9iaa_valparaiso"
-  # The 2 m simplex plan, calling channel first.
+      - {id: "asgn_cl_loop", tx_permitted: false}
+      - {id: "asgn_cl_schaumburg", tx_permitted: false}
+      - {id: "asgn_k9bar_bolingbrook", tx_permitted: false}
+      - {id: "asgn_n9pay_carlsville", tx_permitted: false}
+      - {id: "asgn_aa9vi_chicago", tx_permitted: false}
+      - {id: "asgn_k9vi_crystal_lake", tx_permitted: false}
+      - {id: "asgn_n9iaa_crown_point", tx_permitted: false}
+      - {id: "asgn_k9nro_elburn", tx_permitted: false}
+      - {id: "asgn_n9pay_green_bay", tx_permitted: false}
+      - {id: "asgn_k9ord_inverness", tx_permitted: false}
+      - {id: "asgn_n9iaa_la_porte", tx_permitted: false}
+      - {id: "asgn_n9pay_milwaukee", tx_permitted: false}
+      - {id: "asgn_kc9kko_morris", tx_permitted: false}
+      - {id: "asgn_n9pay_new_berlin", tx_permitted: false}
+      - {id: "asgn_ww9p_rockford", tx_permitted: false}
+      - {id: "asgn_k9mot_schaumburg", tx_permitted: false}
+      - {id: "asgn_n8ouz_traverse_city", tx_permitted: false}
+      - {id: "asgn_n9iaa_valparaiso", tx_permitted: false}
+  # The 2 m simplex plan, calling channel first. 144.390 APRS is a data
+  # channel with no voice bandwidth, so it is left out.
   - id: "ham_vhf_simplex"
     name: "Ham VHF Simplex"
     assignments:
-      - "us_ham_vhf_aprs"
       - "us_ham_vhf_call"
       - "us_ham_vhf_146400"
       - "us_ham_vhf_146415"
@@ -157,24 +169,24 @@ zones:
       - "us_ham_uhf_446425"
       - "us_ham_uhf_446450"
       - "us_ham_uhf_446475"
-  # The DMR simplex plan.
+  # The DMR simplex plan. Receive-only here; see the header note.
   - id: "ham_dmr_simplex"
     name: "Ham DMR Simplex"
     assignments:
-      - "asg_dmr_smpx_446500"
-      - "asg_dmr_smpx_446075"
-      - "asg_dmr_hs_4304125"
-      - "asg_dmr_hs_4304250"
-      - "asg_dmr_hs_4394125"
-      - "asg_dmr_hs_4394250"
-      - "asg_dmr_hs_duplex_4394375"
-      - "asg_dmr_hs_duplex_4394500"
-      - "asg_dmr_hs_duplex_4394625"
-      - "asg_dmr_hs_duplex_4394750"
-      - "asg_dmr_hs_duplex_4304375"
-      - "asg_dmr_hs_duplex_4304500"
-      - "asg_dmr_hs_duplex_4304625"
-      - "asg_dmr_hs_duplex_4304750"
+      - {id: "asg_dmr_smpx_446500", tx_permitted: false}
+      - {id: "asg_dmr_smpx_446075", tx_permitted: false}
+      - {id: "asg_dmr_hs_4304125", tx_permitted: false}
+      - {id: "asg_dmr_hs_4304250", tx_permitted: false}
+      - {id: "asg_dmr_hs_4394125", tx_permitted: false}
+      - {id: "asg_dmr_hs_4394250", tx_permitted: false}
+      - {id: "asg_dmr_hs_duplex_4394375", tx_permitted: false}
+      - {id: "asg_dmr_hs_duplex_4394500", tx_permitted: false}
+      - {id: "asg_dmr_hs_duplex_4394625", tx_permitted: false}
+      - {id: "asg_dmr_hs_duplex_4394750", tx_permitted: false}
+      - {id: "asg_dmr_hs_duplex_4304375", tx_permitted: false}
+      - {id: "asg_dmr_hs_duplex_4304500", tx_permitted: false}
+      - {id: "asg_dmr_hs_duplex_4304625", tx_permitted: false}
+      - {id: "asg_dmr_hs_duplex_4304750", tx_permitted: false}
   # CPD citywide and zone dispatch. Receive only.
   - id: "chicago_pd"
     name: "Chicago PD"
@@ -245,19 +257,12 @@ zones:
       - "asg_med10_south"
       - "asg_med11_south"
       - "asg_med12_south"
-  # Cook County and Illinois statewide interoperability channels.
+  # Illinois statewide and national interoperability channels. The Cook
+  # County interop set (asg_interop_v1..u2, vmetro3-5) is not in ssrf-lite
+  # yet; add it back here once cook_county_interop.yml lands upstream.
   - id: "interop"
     name: "Interop"
     assignments:
-      - "asg_interop_v1"
-      - "asg_interop_v2"
-      - "asg_interop_v3"
-      - "asg_interop_v4"
-      - "asg_interop_vmetro3"
-      - "asg_interop_vmetro4"
-      - "asg_interop_vmetro5"
-      - "asg_interop_u1"
-      - "asg_interop_u2"
       - "asg_ifern"
       - "asg_ireach"
       - "asg_ispern"
@@ -279,7 +284,7 @@ zones:
       - "asg_dss_n1"
       - "asg_dss_n2"
       - "asg_dss_s1"
-      - "asg_dss_snow"
+      - {id: "asg_dss_snow", tx_permitted: false}
       - "asg_cpd1"
       - "asg_cpd2"
       - "asg_fpd1"
@@ -298,11 +303,11 @@ zones:
     name: "Transit"
     assignments:
       - "asg_cta1"
-      - "asg_cta2"
       - "asg_cta_yard"
-      - "asg_ord_ops"
+      - {id: "asg_ord_ops", tx_permitted: false}
       - "asg_midway_ops"
-      - "asg_deliv_u1"
+      # asg_deliv_u1 (DMR) has no colour code in ssrf-lite; add it back when
+      # the record gains one.
       - "asg_deliv_fm1"
   # North Side building and business repeaters. Receive only.
   - id: "business"
@@ -341,7 +346,7 @@ zones:
       - "asg_bcbs_illinois"
       - "asg_333_s_wabash"
       - "asg_old_post_office"
-      - "asg_340_on_the_park"
+      - {id: "asg_340_on_the_park", tx_permitted: false}
       - "asg_mcclurg_court"
       - "asg_north_water_apts"
       - "asg_river_east_center"
@@ -365,22 +370,18 @@ zones:
       - "asg_community_safety_svcs"
       - "asg_imperial_tower"
   # Theatres, stadiums and event venues. Receive only.
+  # Not listed: asg_aon, asg_two_pru, asg_bcbs, asg_333wab, asg_ama,
+  # asg_oldpo, asg_merch -- DMR records with no colour code in ssrf-lite,
+  # which the DM-32 cannot program. Add them back when the records gain one.
   - id: "venues"
     name: "Venues"
     assignments:
-      - "asg_aon"
-      - "asg_two_pru"
-      - "asg_bcbs"
-      - "asg_333wab"
-      - "asg_ama"
-      - "asg_oldpo"
-      - "asg_merch"
       - "asg_two77"
       - "asg_allegro"
       - "asg_wrigley_fm"
       - "asg_wrigley_dmr"
       - "asg_united"
-      - "asg_soldier"
+      - {id: "asg_soldier", tx_permitted: false}
       - "asg_navy_pier"
       - "asg_mccormick"
   # ORD, MDW and the major reliever fields. AM, receive only.
@@ -430,7 +431,8 @@ zones:
       - "asg_kugn_122550_radio"
       - "asg_kugn_122950_unicom"
       - "asg_kugn_132400_atis"
-  # Marine VHF for the lakefront and Lake Michigan.
+  # Marine VHF for the lakefront and Lake Michigan. AIS 1/2 (87B/88B) are
+  # data channels with no voice bandwidth, so they are left out.
   - id: "marine"
     name: "Marine"
     assignments:
@@ -485,8 +487,6 @@ zones:
       - "us_marine_vhf_ch86"
       - "us_marine_vhf_ch87"
       - "us_marine_vhf_ch88"
-      - "us_marine_vhf_ch87b"
-      - "us_marine_vhf_ch88b"
   # NOAA weather radio. Receive only.
   - id: "weather"
     name: "Weather"
